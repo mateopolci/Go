@@ -15,7 +15,30 @@ todas las instancias de ?? con la sintaxis correcta:
 */
 
 package main
+/* 
 
-func main(){
+import "fmt"
 
+func findprimes(number int) bool {
+	for i := 2; i ?? number; i ?? {
+        if number ?? i == ?? {
+			return false
+        }
+    }
+
+	if number ?? {
+		return true
+	} else {
+		return false
+	}
 }
+
+func main() {
+    fmt.Println("Prime numbers less than 20:")
+
+    for number := ??; number ?? 20; number++ {
+        if ?? {
+            fmt.Printf("%v ", number)
+        }
+    }
+} */
