@@ -20,15 +20,12 @@ func main(){
 	fmt.Println("Bienvenido a Go Guess The Number")
 	
 	var difficulty string
-	for{
 		fmt.Println("Enter a difficulty: Easy, Medium or Hard")
 		_, err := fmt.Scan(&difficulty)
-		difficulty := strings.ToLower(difficulty)
+		difficulty = strings.ToLower(difficulty)
 		if err != nil {
 			log.Println("Error reading difficulty:", err)
-			break
 		}
-	}
 
 
 	fmt.Println("Im the guessed difficulty", difficulty)
