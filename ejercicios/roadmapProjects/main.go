@@ -27,13 +27,14 @@ func difficultyPicker(){
 	_, err := fmt.Scan(&difficulty)
 	difficulty = strings.ToLower(difficulty)
 
+	/* 	
 	switch difficulty {
 	case "easy":
-		difficulty = 
+	difficulty = 
 	case "medium":
 	case "hard":
-
-	}
+	} 
+	*/
 
 	if err != nil {
 		log.Println("Oops! An error ocurred:", err)
