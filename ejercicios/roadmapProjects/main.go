@@ -17,17 +17,33 @@ func main(){
     // Genera un número aleatorio del 1 al 100
     randomNumber := r.Int31n(100) + 1
 
-	fmt.Println("Bienvenido a Go Guess The Number")
-	
-	var difficulty string
-		fmt.Println("Enter a difficulty: Easy, Medium or Hard")
-		_, err := fmt.Scan(&difficulty)
-		difficulty = strings.ToLower(difficulty)
-		if err != nil {
-			log.Println("Error reading difficulty:", err)
-		}
-
-
-	fmt.Println("Im the guessed difficulty", difficulty)
+	fmt.Println("Welcome to Go Guess The Number")
+	fmt.Println("Enter a difficulty: Easy, Medium or Hard")
 	fmt.Println("Im the random number", randomNumber)
+}
+
+func difficultyPicker(){
+	var difficulty string
+	_, err := fmt.Scan(&difficulty)
+	difficulty = strings.ToLower(difficulty)
+
+	switch difficulty {
+	case "easy":
+		difficulty = 
+	case "medium":
+	case "hard":
+
+	}
+
+	if err != nil {
+		log.Println("Oops! An error ocurred:", err)
+	} else if difficulty == "easy" {
+		fmt.Println("You've selected the Easy difficulty")
+	} else if difficulty == "medium" {
+		fmt.Println("You've selected the Medium difficulty")
+	} else if difficulty == "hard" {
+		fmt.Println("You've selected the Hard difficulty")
+	} else {
+		fmt.Println("Please select a valid difficulty")
+	}
 }
