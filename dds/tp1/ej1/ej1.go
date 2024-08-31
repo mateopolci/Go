@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func main(){
@@ -32,7 +33,7 @@ func math() {
 		input string
 	)
 	scanner := bufio.NewScanner(os.Stdin)
-
+	
 	fmt.Println("----------------------------")
 	fmt.Println("1: Adding")
 	fmt.Println("2: Subtracting")
@@ -84,7 +85,7 @@ func cipher(){
 	)
 	scanner := bufio.NewScanner(os.Stdin)
 	
-	//Función para crear el alfabeto original
+	//Creates the original alphabet
 	for i := 'a'; i <= 'z' ; i++ {
 		alphabet = append(alphabet, i)
 	}
@@ -109,7 +110,7 @@ func cipher(){
 		input = scanner.Text()
 		key, _ = strconv.Atoi(input)
 		
-		//Crea el alfabeto desplazado en función de la llave
+		//Create the shifted alphabet based on the key
 		for i := 'a'; i <= 'z' ; i++ {
 			shiftedLetter := alphabet[(int(i)-'a'+key)%26]
 			shiftedAlphabet = append(shiftedAlphabet, shiftedLetter)
@@ -121,7 +122,20 @@ func cipher(){
 		phrase = scanner.Text()
 		
 		//Return ciphered phrase
-
+		//
+		var result strings.Builder
+		for _, char := range phrase {
+			if char >= 'a' && char <= 'z' {
+				result.WriteRune(shiftedAlphabet[char-'a'])
+				} else if char >= 'A' && char <= 'Z' {
+					lowerChar := char + ('a' - 'A')
+					result.WriteRune(shiftedAlphabet[lowerChar-'a'] - ('a' - 'A'))
+					} else {
+						result.WriteRune(char)
+					}
+				}
+				fmt.Printf("Ciphered phrase: %s\n", result.String())
+		//
 	case 2:
 		//Get key
 		fmt.Print("Enter a decipher key [0-26]: ")
@@ -141,6 +155,23 @@ func cipher(){
 		phrase = scanner.Text()
 		
 		//Return deciphered phrase
-		
+		//
+		var result strings.Builder
+        reverseAlphabetMap := make(map[rune]rune)
+        for i, char := range shiftedAlphabet {
+			reverseAlphabetMap[char] = alphabet[i]
+        }
+        for _, char := range phrase {
+			if char >= 'a' && char <= 'z' {
+				result.WriteRune(reverseAlphabetMap[char])
+				} else if char >= 'A' && char <= 'Z' {
+					lowerChar := char + ('a' - 'A')
+					result.WriteRune(reverseAlphabetMap[lowerChar] - ('a' - 'A'))
+					} else {
+						result.WriteRune(char)
+					}
+				}
+				fmt.Printf("Deciphered phrase: %s\n", result.String())
+		//
 	}
 }
