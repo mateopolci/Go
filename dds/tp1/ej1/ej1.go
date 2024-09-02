@@ -110,7 +110,7 @@ func cipher(){
 		input = scanner.Text()
 		key, _ = strconv.Atoi(input)
 		
-		//Create the shifted alphabet based on the key
+		//Creates shifted alphabet based on key
 		for i := 'a'; i <= 'z' ; i++ {
 			shiftedLetter := alphabet[(int(i)-'a'+key)%26]
 			shiftedAlphabet = append(shiftedAlphabet, shiftedLetter)
@@ -143,7 +143,7 @@ func cipher(){
 		input = scanner.Text()
 		key, _ = strconv.Atoi(input)
 		
-		//Crea el alfabeto desplazado en función de la llave
+		//Creates shifted alphabet based on key
 		for i := 'a'; i <= 'z' ; i++ {
 			shiftedLetter := alphabet[(int(i)-'a'+key)%26]
 			shiftedAlphabet = append(shiftedAlphabet, shiftedLetter)
