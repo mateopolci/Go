@@ -14,9 +14,11 @@ button{
     
 }
 button:hover{
-    background-color: aqua;
+    background-color: black;
+    color: white;
+    transition: 0.2s;
 }
-#credentials{
+#credentials, #acronym{
     width: 500px;
     color: black;
     background-color: white;
@@ -26,4 +28,12 @@ body{
 }
 .border{
     border: 5px solid black;
+}
+input{
+    width: 30%;
+    height: 25px;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
 }

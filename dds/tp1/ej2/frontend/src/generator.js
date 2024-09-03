@@ -1,7 +1,6 @@
 import './style.css';
 import './app.css';
 
-//Credentials generator
 function generateUsername() {
     let username = Math.random().toString(36).slice(2);
     return username;
@@ -11,7 +10,6 @@ function generatePassword() {
     return password;
 }
 
-//Buttons and div getters
 const generator = document.getElementById("generator");
 const credentials = document.getElementById("credentials");
 const cleaner = document.getElementById("cleaner");

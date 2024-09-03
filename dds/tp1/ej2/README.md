@@ -1,23 +1,32 @@
 # README
 
-## About
-
-This is the official Wails Vanilla template.
-
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
-
-## Live Development
-
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
-
-## Building
-
-To build a redistributable, production mode package, use `wails build`.
-
 ## 1. Aplicación de formularios (o ventanas)
 
 Deberá contar con, por lo menos, dos botones que realicen dos tareas diferentes. Éstas pueden ser, matemáticas, lógicas o de cadenas de caracteres. No podrán coincidir con las del ejercicio anterior.
+
+## General requirements
+
+- Golang 1.20 or higher.
+- NPM (Node 15 or higher).
+
+### Windows requirements
+
+- [WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/?form=MA13LH)
+
+### Linux requirements
+
+- Linux requires the standard gcc build tools plus libgtk3 and libwebkit. Rather than list a ton of commands for different distros, Wails can try to determine what the installation commands are for your specific distribution. Run `wails doctor` after installation to be shown how to install the dependencies. If your distro/package manager is not supported, please consult the Add Linux Distro guide.
+
+### MacOs requirements
+
+- Wails requires that the xcode command line tools are installed. This can be done by running `xcode-select --install`.
+
+## How to run
+
+1) Clone the repo.
+2) Run `go mod tidy` at root.
+3) Enter frontend directory with: `cd frontend`.
+4) Install proyect dependencies: `npm install`.
+5) Go back to root: `cd ../`.
+    - Live development window: Run `wails dev`.
+    - Build an executable: Run `wails build`.
