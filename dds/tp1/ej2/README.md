@@ -1,6 +1,4 @@
-# README
-
-## 1. Aplicación de formularios (o ventanas)
+# 1. Aplicación de formularios (o ventanas)
 
 Deberá contar con, por lo menos, dos botones que realicen dos tareas diferentes. Éstas pueden ser, matemáticas, lógicas o de cadenas de caracteres. No podrán coincidir con las del ejercicio anterior.
 
@@ -25,9 +23,10 @@ Deberá contar con, por lo menos, dos botones que realicen dos tareas diferentes
 ## How to run
 
 1) Clone the repo.
-2) Run `go mod tidy` at root.
-3) Enter frontend directory with: `cd frontend`.
-4) Install proyect dependencies: `npm install`.
-5) Go back to root: `cd ../`.
+2) Enter ej2 directory with: `cd ej2`
+3) Run `go mod tidy`.
+4) Enter frontend directory with: `cd frontend`.
+5) Install proyect dependencies: `npm install`.
+6) Go back to ej2: `cd ../`.
     - Live development window: Run `wails dev`.
     - Build an executable: Run `wails build` (Generated in ./build/bin).
