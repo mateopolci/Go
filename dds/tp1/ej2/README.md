@@ -6,8 +6,9 @@ Deberá contar con, por lo menos, dos botones que realicen dos tareas diferentes
 
 ## General requirements
 
-- Golang 1.20 or higher.
-- NPM (Node 15 or higher).
+- [Golang](https://go.dev/doc/install) 1.20 or higher.
+- NPM ([Node](https://nodejs.org/en/download/prebuilt-installer/current) 15 or higher).
+- [Wails](https://wails.io/docs/gettingstarted/installation).
 
 ### Windows requirements
 
@@ -29,4 +30,4 @@ Deberá contar con, por lo menos, dos botones que realicen dos tareas diferentes
 4) Install proyect dependencies: `npm install`.
 5) Go back to root: `cd ../`.
     - Live development window: Run `wails dev`.
-    - Build an executable: Run `wails build`.
+    - Build an executable: Run `wails build` (Generated in ./build/bin).
