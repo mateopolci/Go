@@ -34,24 +34,21 @@ var albums = []album{
 	},
 }
 
-// Controlador GET
+// Controlador GET todo
 func getAlbums(ctx *gin.Context) {
 	ctx.IndentedJSON(http.StatusOK, albums)
 }
 
 // Controlador GET un album por ID
 func getAlbumById(ctx *gin.Context) {
-	//Capturamos el valor pasado por endpoint
 	id := ctx.Param("id")
 
-	//Recorremos el array de albumes para ver si existe el id ingresado
 	for _, a := range albums {
 		if a.ID == id {
 			ctx.IndentedJSON(http.StatusOK, a)
 			return
 		}
 	}
-	//Si no se encontró, devolvemos error
 	ctx.IndentedJSON(http.StatusNotFound, gin.H{"message":"The album ID does not exist"})
 }
 
@@ -61,11 +58,9 @@ func postAlbums(ctx *gin.Context) {
 	err := ctx.BindJSON(&newAlbum)
 	
 	if err != nil {
-		//Devolver un error 400
 		ctx.IndentedJSON(http.StatusBadRequest, gin.H{"message":"The album ID does not exist"})
 		return
 	}
-	//Añadimos el album al slice
 	albums = append(albums, newAlbum)
 	ctx.IndentedJSON(http.StatusCreated, newAlbum)
 }
@@ -73,7 +68,6 @@ func postAlbums(ctx *gin.Context) {
 func main() {
 	router := gin.Default()
 	router.GET("/albums", getAlbums)
-	//Establecemos el endpoint especificando el valor como id
 	router.GET("/album/:id", getAlbumById)
 	router.POST("/albums", postAlbums)
 	router.Run("localhost:8080")
